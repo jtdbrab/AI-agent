@@ -1,5 +1,18 @@
+import os
+from dotenv import load_dotenv
+from google import genai
+
 def main():
-    print("Hello from ai!")
+    load_dotenv()
+    api_key = os.environ.get("GEMINI_API_KEY")
+    client = genai.Client(api_key=api_key)
+    print(api_key[:6])
+ #   response = client.models.generate_content(model='gemini-2.0-flash-001', contents="Why is Boot.dev such a great place to learn backend development? Use one paragraph maximum.")
+ #   print(response.text)
+    
+  #  print(response.usage_metadata)
+  #  print(type(response.usage_metadata))
+
 
 
 if __name__ == "__main__":
